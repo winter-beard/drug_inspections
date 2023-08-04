@@ -5,16 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FDA Drug Inspections</title>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <style>
-        /* Adjust the size of the SVG to fit the container */
-        svg {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+
 </head>
 <body>
-    <div id="chart"></div>
+    <div id="chart" style="width: 800px; height: 600px;"></div>
     <script>
         // Sample data for the initial circles (sum of values and three-letter country codes)
         const inspections = [
@@ -75,7 +69,7 @@
 
         // updated circles to represent individual facilities
         const facilities = [
-          { value: 714, country: 'USA', color: 'blue' },
+            { value: 714, country: 'USA', color: 'blue' },
             { value: 568, country: 'India', color: 'orange' },
             { value: 202, country: 'China', color: 'red' },
             { value: 97, country: 'Italy', color: 'grey' },
