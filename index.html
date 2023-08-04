@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Dots</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <style>
+        /* Adjust the size of the SVG to fit the container */
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart"></div>
+    <script>
+        // Sample data for the initial circles (sum of values and three-letter country codes)
+        const initialData = [
+            { value: 50, country: 'USA', color: 'red' },
+            { value: 30, country: 'CAN', color: 'blue' },
+            // Add more data points here
+        ];
+
+        // Sample data for the updated circles
+        const updatedData = [
+            { value: 80, country: 'USA', color: 'green' },
+            { value: 40, country: 'CAN', color: 'purple' },
+            // Add more data points here
+        ];
+
+        // Function to draw the circles based on the data
+        function drawCircles(data) {
+            const svg = d3.select('#chart svg');
+
+            // Update the circles
+            const circles = svg.selectAll('circle')
+                .data(data, d => d.country);
+
+            // Enter new circles
+            circles.enter()
+                .append('circle')
+                .attr('cx', 400) // Adjust the center X-coordinate as needed
+                .attr('cy', 300) // Adjust the center Y-coordinate as needed
+                .attr('r', d => Math.sqrt(d.value) * 5) // Scale the radius based on the value
+                .attr('fill', d => d.color)
+                .merge(circles) // Merge enter and update selections
+                .transition()
+                .duration(1000) // Animation duration in milliseconds
+                .attr('r', d => Math.sqrt(d.value) * 5);
+
+            // Remove any circles that are not in the updated data
+            circles.exit().remove();
+        }
+
+        // Initial drawing of circles
+        drawCircles(initialData);
+
+        // Button to trigger the animation
+        d3.select('#chart')
+            .append('button')
+            .text('Animate')
+            .on('click', function() {
+                // Animate the updated circles
+                drawCircles(updatedData);
+            });
+
+    </script>
+</body>
+</html>
