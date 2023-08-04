@@ -17,7 +17,7 @@
     <div id="chart"></div>
     <script>
         // Sample data for the initial circles (sum of values and three-letter country codes)
-        const initialData = [
+        const inspections = [
             { value: 1144, country: 'USA', color: 'blue' },
             { value: 1018, country: 'India', color: 'orange' },
             { value: 326, country: 'China', color: 'red' },
@@ -156,7 +156,7 @@
         }
 
         // Initial drawing of circles
-        drawCircles(initialData);
+        drawCircles(inspections);
 
         // Button to trigger the animation
         d3.select('#chart')
@@ -164,7 +164,7 @@
             .text('Animate')
             .on('click', function() {
                 // Animate the updated circles
-                drawCircles(updatedData);
+                drawCircles(facilities);
             });
 
     </script>
