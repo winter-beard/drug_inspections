@@ -1,167 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FDA Drug Inspections</title>
-    <script src="https://d3js.org/d3.v6.min.js"></script>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
 
-</head>
-<body>
-    <div id="chart" style="width: 800px; height: 600px;"></div>
-    <div class="flourish-embed flourish-survey" data-src="visualisation/14643307"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-    <script>
-        // Sample data for the initial circles (sum of values and three-letter country codes)
-        const inspections = [
-            { value: 1144, country: 'USA', color: 'blue' },
-            { value: 1018, country: 'India', color: 'orange' },
-            { value: 326, country: 'China', color: 'red' },
-            { value: 154, country: 'Italy', color: 'grey' },
-            { value: 146, country: 'Germany', color: 'black' },
-            { value: 116, country: 'Canada', color: 'green' },
-            { value: 92, country: 'Spain', color: 'yellow' },
-            { value: 64, country: 'France', color: 'purple' },
-            { value: 54, country: 'UK', color: 'pink' },
-            { value: 48, country: 'Taiwan', color: 'aquamarine' },
-            { value: 41, country: 'Switzerland', color: 'lime' },
-            { value: 33, country: 'Israel', color: 'navy' },
-            { value: 32, country: 'Japan', color: 'olive' },
-            { value: 29, country: 'Ireland', color: 'teal' },
-            { value: 25, country: 'Austria', color: 'steelblue' },
-            { value: 19, country: 'Czech Republic', color: 'maroon' },
-            { value: 19, country: 'Netherlands', color: '#f5c242' },
-            { value: 19, country: 'Mexico', color: '#f56c42' },
-            { value: 19, country: 'Hungary', color: '#5742f5' },
-            { value: 19, country: 'Romania', color: 'brown' },
-            { value: 17, country: 'Slovenia', color: 'salmon' },
-            { value: 16, country: 'Bangladesh', color: 'orangered' },
-            { value: 14, country: 'Denmark', color: '#FFEFD5' },
-            { value: 13, country: 'Brazil', color: 'Khaki' },
-            { value: 13, country: 'South Africa', color: 'Magenta' },
-            { value: 13, country: 'Norway', color: 'Thistle' },
-            { value: 11, country: 'Argentina', color: 'SpringGreen' },
-            { value: 11, country: 'Malaysia', color: 'LightCyan' },
-            { value: 11, country: 'Jordan', color: 'DodgerBlue' },
-            { value: 11, country: 'Australia', color: 'RosyBrown' },
-            { value: 10, country: 'Malta', color: 'Chocolate' },
-            { value: 10, country: 'Belgium', color: 'MistyRose' },
-            { value: 9, country: 'Finland', color: 'Gainsboro' },
-            { value: 8, country: 'Portugal', color: 'Silver' },
-            { value: 8, country: 'South Korea', color: 'DarkKhaki' },
-            { value: 7, country: 'Greece', color: 'DarkSlateGray' },
-            { value: 7, country: 'Turkey', color: 'HoneyDew' },
-            { value: 7, country: 'Croatia', color: 'Turquoise' },
-            { value: 6, country: 'Sweden', color: 'RebeccaPurple' },
-            { value: 6, country: 'New Zealand', color: 'FireBrick' },
-            { value: 4, country: 'Poland', color: 'PaleVioletRed' },
-            { value: 3, country: 'Colombia', color: 'Coral' },
-            { value: 3, country: 'Latvia', color: 'LightGoldenrodYellow' },
-            { value: 3, country: 'Bulgaria', color: 'Moccasin' },
-            { value: 3, country: 'Singapore', color: 'BlueViolet' },
-            { value: 3, country: 'Saudi Arabia', color: 'Orchid' },
-            { value: 2, country: 'Macao', color: 'DarkGreen' },
-            { value: 2, country: 'United Arab Emirates', color: 'DarkSeaGreen' },
-            { value: 2, country: 'Thailand', color: 'PowderBlue' },
-            { value: 2, country: 'Slovakia', color: 'MidnightBlue' },
-            { value: 1, country: 'Moldova', color: 'Azure' },
-            { value: 1, country: 'Hong Kong', color: 'WhiteSmoke' },
-            { value: 1, country: 'Dominican Republic', color: 'Linen' },
-        ];
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
 
-        // updated circles to represent individual facilities
-        const facilities = [
-            { value: 714, country: 'USA', color: 'blue' },
-            { value: 568, country: 'India', color: 'orange' },
-            { value: 202, country: 'China', color: 'red' },
-            { value: 97, country: 'Italy', color: 'grey' },
-            { value: 94, country: 'Germany', color: 'black' },
-            { value: 68, country: 'Canada', color: 'green' },
-            { value: 65, country: 'Spain', color: 'yellow' },
-            { value: 41, country: 'France', color: 'purple' },
-            { value: 32, country: 'UK', color: 'pink' },
-            { value: 29, country: 'Taiwan', color: 'aquamarine' },
-            { value: 29, country: 'Switzerland', color: 'lime' },
-            { value: 25, country: 'Israel', color: 'navy' },
-            { value: 17, country: 'Japan', color: 'olive' },
-            { value: 16, country: 'Ireland', color: 'teal' },
-            { value: 16, country: 'Austria', color: 'steelblue' },
-            { value: 13, country: 'Czech Republic', color: 'maroon' },
-            { value: 11, country: 'Netherlands', color: '#f5c242' },
-            { value: 10, country: 'Mexico', color: '#f56c42' },
-            { value: 10, country: 'Hungary', color: '#5742f5' },
-            { value: 9, country: 'Romania', color: 'brown' },
-            { value: 9, country: 'Slovenia', color: 'salmon' },
-            { value: 7, country: 'Bangladesh', color: 'orangered' },
-            { value: 7, country: 'Denmark', color: '#FFEFD5' },
-            { value: 7, country: 'Brazil', color: 'Khaki' },
-            { value: 7, country: 'South Africa', color: 'Magenta' },
-            { value: 7, country: 'Norway', color: 'Thistle' },
-            { value: 6, country: 'Argentina', color: 'SpringGreen' },
-            { value: 6, country: 'Malaysia', color: 'LightCyan' },
-            { value: 6, country: 'Jordan', color: 'DodgerBlue' },
-            { value: 6, country: 'Australia', color: 'RosyBrown' },
-            { value: 5, country: 'Malta', color: 'Chocolate' },
-            { value: 5, country: 'Belgium', color: 'MistyRose' },
-            { value: 5, country: 'Finland', color: 'Gainsboro' },
-            { value: 5, country: 'Portugal', color: 'Silver' },
-            { value: 5, country: 'South Korea', color: 'DarkKhaki' },
-            { value: 5, country: 'Greece', color: 'DarkSlateGray' },
-            { value: 4, country: 'Turkey', color: 'HoneyDew' },
-            { value: 4, country: 'Croatia', color: 'Turquoise' },
-            { value: 4, country: 'Sweden', color: 'RebeccaPurple' },
-            { value: 2, country: 'New Zealand', color: 'FireBrick' },
-            { value: 2, country: 'Poland', color: 'PaleVioletRed' },
-            { value: 2, country: 'Colombia', color: 'Coral' },
-            { value: 2, country: 'Latvia', color: 'LightGoldenrodYellow' },
-            { value: 1, country: 'Bulgaria', color: 'Moccasin' },
-            { value: 1, country: 'Singapore', color: 'BlueViolet' },
-            { value: 1, country: 'Saudi Arabia', color: 'Orchid' },
-            { value: 1, country: 'Macao', color: 'DarkGreen' },
-            { value: 1, country: 'United Arab Emirates', color: 'DarkSeaGreen' },
-            { value: 1, country: 'Thailand', color: 'PowderBlue' },
-            { value: 1, country: 'Slovakia', color: 'MidnightBlue' },
-            { value: 1, country: 'Moldova', color: 'Azure' },
-            { value: 1, country: 'Hong Kong', color: 'WhiteSmoke' },
-            { value: 1, country: 'Dominican Republic', color: 'Linen' },
-            // Add more data points here
-        ];
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-        // Function to draw the circles based on the data
-        function drawCircles(data) {
-            const svg = d3.select('#chart svg');
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 25rem;
+        background-color: #eee;
+        background-color: #fff;
+        color: black;
+      }
 
-            // Update the circles
-            const circles = svg.selectAll('circle')
-                .data(data, d => d.country);
+      .step p {
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.25rem;
+      }
 
-            // Enter new circles
-            circles.enter()
-                .append('circle')
-                .attr('cx', 400) // Adjust the center X-coordinate as needed
-                .attr('cy', 300) // Adjust the center Y-coordinate as needed
-                .attr('r', d => Math.sqrt(d.value) * 5) // Scale the radius based on the value
-                .attr('fill', d => d.color)
-                .merge(circles) // Merge enter and update selections
-                .transition()
-                .duration(1000) // Animation duration in milliseconds
-                .attr('r', d => Math.sqrt(d.value) * 5);
+      .hidden { visibility: hidden; }
 
-            // Remove any circles that are not in the updated data
-            circles.exit().remove();
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
         }
 
-        // Initial drawing of circles
-        drawCircles(inspections);
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
 
-        // Button to trigger the animation
-        d3.select('#chart')
-            .append('button')
-            .text('Animate')
-            .on('click', function() {
-                // Animate the updated circles
-                drawCircles(facilities);
-            });
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+	<h1>FDA Inspections in history</h1>
+      <section id="scrolly">
+        <div class="sticky-thing">
+          <div class="ai2html-container">
+
+<!-- ai2html goes below this line -->
+<div class="flourish-embed flourish-survey" data-src="visualisation/14645181"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+<!-- ai2html goes above this line -->
+
+
+          </div>
+        </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step-zero">
+            <p>2024 Facilities inspected</p>
+			<div class="flourish-embed flourish-survey" data-src="visualisation/14643307"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+          </div>
+          </div>
+          <div class="step" id="step-one">
+            <p>API Manufacturing inspections</p>
+			
+          <div class="step" id="step-two">
+            <p>ddepepe</p>
+          </div>
+          <div class="step" id="step-three">
+            <p>Now you're at the final step and everything has been reset to the defaults.</p>
+            <p>That was fun, though, right?</p>
+          </div>
+        </div>
+      </section>
+
+    <script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+        d3.select("#wc-icon").style('fill', 'red')
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two ya lil bitch")
+        d3.select("#TX").style('fill', 'red')
+        d3.select("#FL").style('fill','red')
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+        d3.select("#wc-icon").style('fill', '#3577B4')
+        d3.select("#TX").style('fill', '#919191')
+        d3.select("#FL").style('fill','#919191')
+      })
 
     </script>
-</body>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.75,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+  </body>
 </html>
+
