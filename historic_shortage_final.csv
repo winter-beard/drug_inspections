@@ -1,0 +1,80 @@
+Generic_Name,length_of_shortage,Drug Type,Is_historic
+Amoxicillin 875 mg Tablets,322,Generic antibiotic,True
+Amoxicillin and Clavulanate 1000 mg/62.5 mg Extended-Release Tablets,600,Generic antibiotic,True
+Atracurium Injection,339,Generic surgical anesthetic,True
+Atracurium Injection,308,Generic surgical anesthetic,True
+Avibactam/Ceftazidime Injection ,180,Proprietary antibiotic,True
+Avibactam/Ceftazidime Injection ,515,Proprietary antibiotic,True
+Azithromycin Injection,360,Generic antibiotic,True
+Azithromycin Injection,1234,Generic antibiotic,True
+Azithromycin Injection,215,Generic antibiotic,True
+Carboplatin Solution for Injection,1002,Generic chemo drug,True
+Ceftazidime Injection,2815,Proprietary antibiotic,True
+Ceftriaxone Sodium Injection,1605,Generic antibiotic,True
+Ciprofloxacin Injection,559,Generic antibiotic,True
+Ciprofloxacin Ophthalmic Solution,1709,Generic antibiotic,True
+Ciprofloxacin Oral Suspension,1188,Generic antibiotic,True
+Cisatracurium Besylate Injection,148,Generic surgical anesthetic,True
+Cisatracurium Besylate Injection,860,Generic surgical anesthetic,True
+Cisplatin Injection,1272,Generic chemo drug,True
+Clonidine Extended-Release Tablets,74,Generic ADHD drug,True
+Clonidine Hydrochloride Injection,160,Generic ADHD drug,True
+Daptomycin Injection,1452,Generic antibiotic,True
+Dexmedetomidine Hydrochloride 100 mcg/mL Vials for Injection,1224,Generic surgical anesthetic,True
+Dexmedetomidine Hydrochloride 4 mcg/mL Premix for Injection,551,Generic surgical anesthetic,True
+Dexmedetomidine Hydrochloride 4 mcg/mL Premix for Injection,415,Generic surgical anesthetic,True
+Dexmedetomidine Hydrochloride in 0.9% Sodium Chloride Injection,209,Generic surgical anesthetic,True
+Doxorubicin Liposomal Injection,135,Generic chemo drug,True
+Doxycycline Hyclate Injection,106,Generic antibiotic,True
+Doxycycline Hyclate Injection,203,Generic antibiotic,True
+Doxycycline Hyclate Injection,602,Generic antibiotic,True
+Erythromycin Lactobionate Injection,1169,Generic antibiotic,True
+Erythromycin Lactobionate Injection ,112,Generic antibiotic,True
+Erythromycin Ophthalmic Ointment,532,Generic antibiotic,True
+Ethambutol Tablets,386,Generic antibiotic,True
+Ethambutol Tablets,699,Generic antibiotic,True
+Etomidate Injection,2094,Generic surgical anesthetic,True
+Etoposide Phosphate Injection,404,Generic chemo drug,True
+Etoposide Phosphate Injection,29,Generic chemo drug,True
+Etoposide Solution for Injection,354,Generic chemo drug,True
+Fluorouracil Injection,267,Generic chemo drug,True
+Fluorouracil Injection,463,Generic chemo drug,True
+Gentamicin Injection,568,Generic antibiotic,True
+Gentamicin Injection,278,Generic antibiotic,True
+Gentamicin Sulfate Ophthalmic Ointment,790,Generic antibiotic,True
+Gentamicin Sulfate Ophthalmic Ointment,275,Generic antibiotic,True
+Hydroxyamphetamine Hydrobromide and Tropicamide Ophthalmic Solution,652,ADHD drug,True
+Imipenem and Cilastatin Sodium ,548,Generic antibiotic,True
+Meropenem Injection,285,Generic antibiotic,True
+Meropenem Injection,728,Generic antibiotic,True
+METHOTREXATE INJECTION ,344,Generic chemo drug,True
+Methotrexate Injection ,1811,Generic chemo drug,True
+Methylphenidate Extended-Release Oral Suspension and Chewable Tablets,501,Generic ADHD drug,True
+Methylphenidate Hydrochloride Chewable Tablets,799,Generic ADHD drug,True
+Methylphenidate Hydrochloride Extended Release Oral Presentations,377,Generic ADHD drug,True
+Methylphenidate Hydrochloride Transdermal,597,Generic ADHD drug,True
+Metronidazole Hydrochloride Injection,1255,Generic antibiotic,True
+MIDAZOLAM INJECTION,359,Generic surgical anesthetic,True
+Morphine PCA Vials,235,Generic surgical anesthetic,True
+Morphine PCA Vials,1529,Generic surgical anesthetic,True
+Morphine Sulfate Immediate-Release Tablets,277,Generic surgical anesthetic,True
+Moxifloxacin Injection,330,Generic antibiotic,True
+Paclitaxel Protein-Bound Injection,353,Generic chemo drug,True
+Paclitaxel Protein-Bound Injection,1,Generic chemo drug,True
+Penicillin G Benzathine,628,Generic antibiotic,True
+Penicillin G Benzathine / Penicillin G Procaine,619,Generic antibiotic,True
+Penicillin G Procaine Injection ,2596,Generic antibiotic,True
+Penicillin G Sodium Injection,145,Generic antibiotic,True
+Remifentanil Injection,615,Generic surgical anesthetic,True
+Rifampin Capsules,228,Generic antibiotic,True
+Rifampin Injection,104,Generic antibiotic,True
+Rifampin Injection,490,Generic antibiotic,True
+Rocuronium Bromide Injection,359,Generic surgical anesthetic,True
+Sufentanil Injection,544,Generic surgical anesthetic,True
+Sufentanil Injection,1106,Generic surgical anesthetic,True
+Tigecycline Injection,604,Generic antibiotic,True
+Vinblastine Sulfate Injection,56,Generic chemo drug,True
+Vinblastine Sulfate Injection,225,Generic chemo drug,True
+Vinblastine Sulfate Injection,42,Generic chemo drug,True
+Vincristine Sulfate Injection,213,Generic chemo drug,True
+Vincristine Sulfate Injection,122,Generic chemo drug,True

@@ -1,0 +1,45 @@
+Generic_Name,length_of_shortage,Drug Type,Is_historic
+Amoxicillin and Clavulanate Oral Presentations,216,Generic antibiotic,False
+Amoxicillin Oral Presentations,230,Generic antibiotic,False
+Busulfan Injection,1649,Generic chemo drug,False
+Carboplatin Solution for Injection,125,Generic chemo drug,False
+Ciprofloxacin Injection,199,Generic antibiotic,False
+Cisplatin Injection,199,Generic chemo drug,False
+Clindamycin Phosphate Injection,2944,Generic antibiotic,False
+Dacarbazine Injection,718,Generic chemo drug,False
+Dexmethylphenidate Extended Release Capsules,26,Generic ADHD drug,False
+Docetaxel Injection,134,Generic chemo drug,False
+Doxorubicin Injection,2927,Generic chemo drug,False
+Doxorubicin Liposomal Injection,0,Generic chemo drug,False
+Doxycycline Oral Suspension,565,Generic antibiotic,False
+Erythromycin Ophthalmic Ointment,359,Generic antibiotic,False
+Etomidate Injection,295,Generic surgical anesthetic,False
+Fentanyl Citrate Injection,2272,Generic surgical anesthetic,False
+Fentanyl Transdermal System,89,Generic surgical anesthetic,False
+Fluorouracil Injection,199,Generic chemo drug,False
+Gentamicin Injection,886,Generic antibiotic,False
+Guanfacine Hydrochloride Tablets,1616,Generic ADHD drug,False
+Hydromorphone Hydrochloride Injection,2249,Generic surgical anesthetic,False
+Isoniazid Injection,1,Generic antibiotic,False
+Isoniazid Tablets,281,Generic antibiotic,False
+Ketamine Injection,1997,Generic surgical anesthetic,False
+Lisdexamfetamine Dimesylate Capsules,0,ADHD drug,False
+Methotrexate Injection,172,Generic chemo drug,False
+Methylphenidate Extended Release Oral Presentations  ,208,Generic ADHD drug,False
+Methylphenidate Immediate-Release Tablets,3,Generic ADHD drug,False
+Metronidazole Hydrochloride Injection,615,Generic antibiotic,False
+Midazolam Injection,1474,Generic surgical anesthetic,False
+Morphine Injection,2982,Generic surgical anesthetic,False
+Morphine PCA Vials,162,Generic surgical anesthetic,False
+Nitrofurantoin Oral Suspension,1875,Generic antibiotic,False
+Paclitaxel Injection,273,Generic chemo drug,False
+Penicillin G Benzathine,149,Generic antibiotic,False
+Penicillin G Benzathine / Penicillin G Procaine,108,Generic antibiotic,False
+Penicillin V Potassium Oral Presentations,72,Generic antibiotic,False
+Polymyxin B and Trimethoprim Sulfates Ophthalmic Solution,45,Generic antibiotic,False
+Propofol Emulsion Injection,1204,Generic surgical anesthetic,False
+Remifentanil Injection,404,Generic surgical anesthetic,False
+Rocuronium Injection,2363,Generic surgical anesthetic,False
+Sufentanil Injection,404,Generic surgical anesthetic,False
+Vancomycin Hydrochloride Injection,2982,Proprietary antibiotic,False
+Vecuronium Bromide Injection,2885,Generic surgical anesthetic,False

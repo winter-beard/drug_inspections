@@ -1,0 +1,28 @@
+Generic_Name,Shortage_Status,Revision_Date,Created_Date,chemo_drug,generic_chemo_drug,Revision_Date_format_1,Revision_Date_formatted,Created_Date_format_1,Created_Date_formatted,Is_historic,length_of_shortage
+Busulfan Injection,Current Shortages," Jul 11, 2023"," Jan 04, 2019",True,True,2023-07-11,2023-07-11,2019-01-04,2019-01-04,False,1649
+Carboplatin Solution for Injection,Resolved Shortages," Mar 08, 2018"," Jun 10, 2015",True,True,2018-03-08,2018-03-08,2015-06-10,2015-06-10,True,1002
+Carboplatin Solution for Injection,Current Shortages," Jul 31, 2023"," Mar 28, 2023",True,True,2023-07-31,2023-07-31,2023-03-28,2023-03-28,False,125
+Cisplatin Injection,Resolved Shortages," Dec 18, 2018"," Jun 25, 2015",True,True,2018-12-18,2018-12-18,2015-06-25,2015-06-25,True,1272
+Cisplatin Injection,Current Shortages," Jul 28, 2023"," Jan 10, 2023",True,True,2023-07-28,2023-07-28,2023-01-10,2023-01-10,False,199
+Dacarbazine Injection,Current Shortages," Jul 11, 2023"," Jul 23, 2021",True,True,2023-07-11,2023-07-11,2021-07-23,2021-07-23,False,718
+Docetaxel Injection,Current Shortages," Jul 11, 2023"," Feb 27, 2023",True,True,2023-07-11,2023-07-11,2023-02-27,2023-02-27,False,134
+Doxorubicin Injection,Current Shortages," Jul 07, 2023"," Jul 02, 2015",True,True,2023-07-07,2023-07-07,2015-07-02,2015-07-02,False,2927
+Doxorubicin Liposomal Injection,Resolved Shortages," Oct 29, 2015"," Jun 16, 2015",True,True,2015-10-29,2015-10-29,2015-06-16,2015-06-16,True,135
+Doxorubicin Liposomal Injection,Current Shortages," Jul 19, 2023"," Jul 19, 2023",True,True,2023-07-19,2023-07-19,2023-07-19,2023-07-19,False,0
+Etoposide Phosphate Injection,Resolved Shortages," Oct 08, 2017"," Aug 30, 2016",True,True,2017-10-08,2017-10-08,2016-08-30,2016-08-30,True,404
+Etoposide Phosphate Injection,Resolved Shortages," Mar 06, 2018"," Feb 05, 2018",True,True,2018-03-06,2018-03-06,2018-02-05,2018-02-05,True,29
+Etoposide Solution for Injection,Resolved Shortages," Dec 10, 2018"," Dec 21, 2017",True,True,2018-12-10,2018-12-10,2017-12-21,2017-12-21,True,354
+Fluorouracil Injection,Resolved Shortages," Oct 21, 2016"," Jan 28, 2016",True,True,2016-10-21,2016-10-21,2016-01-28,2016-01-28,True,267
+Fluorouracil Injection,Resolved Shortages," Jun 06, 2019"," Feb 28, 2018",True,True,2019-06-06,2019-06-06,2018-02-28,2018-02-28,True,463
+Fluorouracil Injection,Current Shortages," Jul 27, 2023"," Jan 09, 2023",True,True,2023-07-27,2023-07-27,2023-01-09,2023-01-09,False,199
+METHOTREXATE INJECTION ,Resolved Shortages," May 26, 2016"," Jun 17, 2015",True,True,2016-05-26,2016-05-26,2015-06-17,2015-06-17,True,344
+Methotrexate Injection ,Resolved Shortages," Dec 01, 2021"," Dec 16, 2016",True,True,2021-12-01,2021-12-01,2016-12-16,2016-12-16,True,1811
+Methotrexate Injection,Current Shortages," Jul 24, 2023"," Feb 02, 2023",True,True,2023-07-24,2023-07-24,2023-02-02,2023-02-02,False,172
+Paclitaxel Injection,Current Shortages," Jul 31, 2023"," Oct 31, 2022",True,True,2023-07-31,2023-07-31,2022-10-31,2022-10-31,False,273
+Paclitaxel Protein-Bound Injection,Resolved Shortages," Sep 04, 2022"," Sep 16, 2021",True,True,2022-09-04,2022-09-04,2021-09-16,2021-09-16,True,353
+Paclitaxel Protein-Bound Injection,Resolved Shortages," Apr 28, 2023"," Apr 27, 2023",True,True,2023-04-28,2023-04-28,2023-04-27,2023-04-27,True,1
+Vinblastine Sulfate Injection,Resolved Shortages," Sep 27, 2016"," Aug 02, 2016",True,True,2016-09-27,2016-09-27,2016-08-02,2016-08-02,True,56
+Vinblastine Sulfate Injection,Resolved Shortages," Feb 25, 2020"," Jul 15, 2019",True,True,2020-02-25,2020-02-25,2019-07-15,2019-07-15,True,225
+Vinblastine Sulfate Injection,Resolved Shortages," Apr 21, 2021"," Mar 10, 2021",True,True,2021-04-21,2021-04-21,2021-03-10,2021-03-10,True,42
+Vincristine Sulfate Injection,Resolved Shortages," Aug 28, 2018"," Jan 27, 2018",True,True,2018-08-28,2018-08-28,2018-01-27,2018-01-27,True,213
+Vincristine Sulfate Injection,Resolved Shortages," Jan 31, 2020"," Oct 01, 2019",True,True,2020-01-31,2020-01-31,2019-10-01,2019-10-01,True,122
