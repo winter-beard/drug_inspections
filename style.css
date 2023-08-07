@@ -26,8 +26,8 @@
 
 body {
     font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
-    background-color: #red;
-    color: #red;
+    background-color: red;
+    color: red;
 }
 
 p {
