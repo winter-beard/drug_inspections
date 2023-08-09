@@ -26,7 +26,7 @@
     		color: black;
 		text-align: center;
 		font-family: "Special Elite";
-        	padding: 1rem;
+        	padding: 35rem;
         	font-size: 1.25rem;
 		z-index: 5;
 		background: white;
@@ -158,7 +158,28 @@
           		</div>
         	</div>
       </section>
-	  
+	  <script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+        d3.select("#Carboplatin").style('fill', '#black')
+        d3.select("#Cisplatin").style('fill','#black')
+      })
+
+    </script>
       <section id="scrolly">
         <div class="sticky-thing">
           <div class="ai2html-container">
@@ -190,24 +211,101 @@
           </div>
         </div>
       </section>
+	  <script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+      
+      })
+
+    </script>
   
 	<section id="scrolly">
         	<div class="sticky-thing">
           		<div class="ai2html-container">
-				
-		
+				<img src="API-2021.png" alt = "treemap of API manufacturers India is largest by far followed by China"></img>
+			</div>
+		</div>
 
         	<div class="scrolly-overlay">
           		<div class="step" id="step-zero">
-            		<p>A visualization of all the Active Pharmaceutical Ingredient manufacturers the FDA inspected in 2021 and 2023. As the graph shows, India is by far the largest exporter of vital pharmaceutical ingredients.</p>
+            		<p>India is by far the largest exporter of vital pharmaceutical ingredients.</p>
 			
           		</div>
 
           		<div class="step" id="step-one">
-            		<p>Despite headlines that the recent shortage is driving more reliance on China, in light of the the FDA's temporary allowance for Chinese manufacturer Qilu Pharmaceuticals to begin importing Cisplatin and Carboplatin, my analysis of FDA inspections of API manufacturing facilities shows that there has been an explosion of facilities in India in the last three years. While the number of inspected facilities remained constant in other countries over the last three years. Compared to 2021, there have been 130 more API manufacturing facilities inspected in India in 2023.</p>
+            		
 			
-
+			<div class="step" id="step-two">	
           		</div>
+				
+			<div class="step" id="step-three">	
+          		</div>
+				
+        	</div>
+      </section>
+		
+		
+		<script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+        d3.select("#Carboplatin").style('fill', '#black')
+        d3.select("#Cisplatin").style('fill','#black')
+      })
+
+    </script>
+
+	<section id="scrolly">
+        	<div class="sticky-thing">
+          		<div class="ai2html-container">
+				<img src="API-2023.png" alt = "treemap of API manufacturers India is largest by far followed by China"></img>
+			</div>
+		</div>
+
+        	<div class="scrolly-overlay">
+          		<div class="step" id="step-zero">
+            		<p> my analysis of FDA inspections of API manufacturing facilities shows that there has been an explosion of facilities in India in the last three years. </p>
+			
+          		</div>
+
+          		<div class="step" id="step-one">
+			<p>While the number of inspected facilities remained constant in other countries over the last three years, there have been 130 more API manufacturing facilities inspected in India in 2023.</p>
+            		
+			<div class="step" id="step-two">
+			<p>This defies multiple <a href= "https://thechinaproject.com/2023/06/07/u-s-drug-shortages-highlight-dependence-on-china-gray-supply-chains/"headlines></a> that focus only on the US' reliance on China. </p>
+          		</div>
+				
+			<div class="step" id="step-three">
+			<p>Which was the prevailing angle of articles covering the FDA's temporary allowance for Chinese manufacturer Qilu Pharmaceuticals to begin importing Cisplatin and Carboplatin</p>
+          		</div>
+				
         	</div>
       </section>
 		
