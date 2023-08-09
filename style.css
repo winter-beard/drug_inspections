@@ -1,12 +1,16 @@
 
 
 .intro {
-    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make it fit the viewport height */
     font-family: 'Special Elite';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    padding-bottom: 0
+    padding-bottom: 0;
+}
 
 }
 
