@@ -1,13 +1,13 @@
 
 
 .intro {
-    margin: 0 auto;
+    margin: 10rem auto;
     font-family: 'Special Elite';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     padding-bottom: 0
-    padding: 35rem;
+
 }
 
 .intro .byline {
@@ -35,7 +35,7 @@ p {
     margin: 1.5rem 0;
     font-size: 1rem;
     line-height: 1.7;
-    font-family: 'Special Elite';
+    font-family: 'Special Elite'
     
 
 }
@@ -48,7 +48,7 @@ p {
 
 img {
     max-width: 100%;
-    padding: 10rem;
+    margin: 10rem;
    
 }
 
