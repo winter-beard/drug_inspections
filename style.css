@@ -27,12 +27,12 @@
 body {
     font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
     background-color: red;
-    color: red;
+    color: navy;
 }
 
 p {
     margin: 1.5rem 0;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.7;
     font-family: 'Special Elite';
 
@@ -73,11 +73,10 @@ img {
 
 .chart-section {
     background-size: 100%;
-    background: #fffafa;
     padding: 30px 0 0px 0;
     /* margin-top: 0.1rem; */
     margin-bottom: 1rem;
-    color: #323a40
+    
 }
 
 .chart-section .chart-title {
