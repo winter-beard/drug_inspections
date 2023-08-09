@@ -1,7 +1,7 @@
 
 
 .intro {
-    margin: 10rem auto;
+    margin: 1rem auto;
     font-family: 'Special Elite';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -29,11 +29,11 @@ body {
     font-feature-settings: 'kern'1, 'onum'0, 'liga'0, 'tnum'1;
     background-color: white;
     color: navy;
-    text-alignment: center;
+    text-align: center;
 }
 
 p {
-    margin: 1.5rem 0;
+    margin: 0;
     font-size: 1rem;
     line-height: 1.7;
     font-family: 'Special Elite'
@@ -49,7 +49,7 @@ p {
 
 img {
     max-width: 100%;
-    margin: 10rem;
+    margin: 1rem;
    
 }
 
