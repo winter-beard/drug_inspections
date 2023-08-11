@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <link rel="stylesheet" href="style.css">
+	  <title>Cisplatin</title>
+    <style>
+			
+			@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+			@font-face {
+				font-family: 'Special Elite';
+				font-style: normal;
+				font-weight: 200 900;
+				font-display: swap;
+				src: url(https://fonts.gstatic.com/s/specialelite/v21/q5uDsoa5M_tv7IihmnkabARboYE.woff2) format('woff2');
+				unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+			}
+
+  	  p {
+    		color: black;
+		    text-align: center;
+		    font-family: "Special Elite";
+        font-size: 1.25rem;
+		    z-index: 5;
+		    background: white;
+  	  }
+	
+	
+      #scrolly {
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        padding: 0;
+        max-width: 35rem;
+        margin: 0 auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+	      width: 100%;
+        margin: 0;
+       	z-index: 1;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+		      z-index: 6;
+        	background-color: whitesmoke;
+        	color: black;
+		      margin: 0 auto;
+		
+      }
+
+      .step p {
+          text-align: center;
+        	padding: 1rem;
+	        font-size: 1.25rem;
+		      z-index: 6;
+      }
+
+      .hidden { visibility: hidden; }
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+          #scrolly.side-by-side {
+            display: flex;
+          }
+
+          #scrolly.side-by-side > div {
+            flex-basis: 0;
+            flex-grow: 1;
+            flex-shrink: 1;
+            padding: 0.75em;
+          }
+          #scrolly.side-by-side .scrolly-overlay {
+            margin-top: 70vh;
+            order: 0;
+          /* Change these to adjust sizing options */
+            min-width: 15rem;
+            max-width: 20rem;
+          }
+
+          #scrolly.side-by-side .sticky-thing {
+            order: 1;
+            flex-grow: 2;
+          }
+        }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+			<div class="intro">
+				<img src="title_img.jpg" alt = "Collage of images including two of the Intas factory in Gunjarat India, a clipping from an FDA report and bordered by empty pill bottles."></img>
+       
+			</div>
+			
+			<div class="opener">
+				
+				<div class="prose-container">
+          <p></p>
+          <p>Check out my analysis <a href = "https://github.com/winter-beard/drug_inspections/blob/main/Project_4_Notebook_final.ipynb">here</a></p>
+	 			  <p>In America, 70% of cancer centers are reporting a shortage of Cisplatin, a platinum-based oncology drug used particularly in soft tissue cancers and flagged for pediatric use. <a href = "https://pubmed.ncbi.nlm.nih.gov/29789926/">A 2018 hospital study</a> has shown that nearly 50% of chemotherapy patients receive a platinum drug during their cancer treatment</p> 
+				  <p>About 50% of the US' Cisplatin comes from a privately-owned Indian company called Intas Pharmaceuticals, manufacturing both finished injectibles and the active ingredient.</p> 
+				  <p>The current shortage began three months after the FDA found massive failures at Intas' newest facility.</p>
+				  <p>5 million injectible drugs, an estimated 50% of the US market for Cisplatin is made here</p>
+				</div>
+				
+			<img src = "Pharmez.png" alt = "a screenshot from Googlemaps of a industrial facility with signage 'Intas Pharmaceuticals'".></img>
+				<div class = "prose-container">
+				<p>A December 2022 report the FDA, found factory staff destroying quality control documents with acid on the property and revealed the company was consistently miscounting the viable compounds of the chemotherapy injectible that was present in their cultures.</p> 
+				</div>
+			</div>
+	  <section id="scrolly">
+          <div class="sticky-thing">
+          		<div class="ai2html-container">
+			          <img src="timeline_creative-Artboard_1.jpg" alt="a pic of the facility with a timeline of the Cisplatin shortage over the top, it shows that the drug was in shortage from 2017 to 2019 and from March 2023 to present."></img>
+          		</div>
+        	</div>
+
+        	<div class="scrolly-overlay">
+          		<div class="step" id="step-zero">
+          		</div>
+         
+          		<div class="step" id="step-one">
+				        <p>Cisplatin has previously been in shortage for 1272 days.</p>
+            	</div>
+
+          		<div class="step" id="step-two">
+            			<p>A clear link can be seen between the current shortage and the regulatory action against Intas.</p>
+          		</div>
+
+          		<div class="step" id="step-three">
+           		<p></p>
+          		</div>
+        	</div>
+    </section>
+    <script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+      
+      })
+
+    </script>
+    <section id="scrolly">
+        <div class="sticky-thing">
+		      <div class="flourish-embed flourish-scatter" data-src="visualisation/14648904"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        </div>
+        
+        <div class="scrolly-overlay">
+          <div class="step" id="step-zero">
+            <p>The average drug shortage lasts 619 days.</p>
+			
+          </div>
+          
+          <div class="step" id="step-one">
+            <p>The median is 345 days among resolved shortages.</p>
+	        </div>
+			
+          <div class="step" id="step-two">
+            <p>Few chemotherapy drug shortages last more than a two years, however Methotrexate, Cisplatin and Carboplatin the most affordable are the outliers. </p>
+          </div>
+          <div class="step" id="step-three">
+            <p>It is clear more incentives are needed to make profit margins comparable to other chemotherapy treatments.</p>
+            
+          </div>
+        </div>
+    </section>
+	  <script>
+      
+        /* Scrollytelling code goes under here */
+        /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+        /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+        /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+      
+      })
+
+    </script>
+  
+	  <section id="scrolly">
+        	<div class="sticky-thing">
+				    <img src="API-2023.png" alt = "treemap of API manufacturers India is largest by far followed by China"></img>
+			    </div>
+
+        	<div class="scrolly-overlay">
+          		<div class="step" id="step-zero">
+            		<p>India is by far the largest exporter of vital pharmaceutical ingredients.</p>
+			
+          		</div>
+
+          		<div class="step" id="step-one">
+              </div>
+            		
+			
+			        <div class="step" id="step-two">	
+          		</div>
+				
+			        <div class="step" id="step-three">	
+          		</div>
+				
+        	  </div>
+    </section>
+		
+		
+	  <script>
+      
+        /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+        /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+        })
+        /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+          
+      })
+
+    </script>
+
+	  <section id="scrolly">
+        <div class="sticky-thing">
+				  <img src="API-2021.png" alt = "treemap of API manufacturers India is largest by far followed by China"></img>
+			  </div>
+		
+        <div class="scrolly-overlay">
+          <div class="step" id="step-zero">
+            <p> My analysis of FDA inspections of API manufacturing facilities shows that there has been an explosion of facilities in India in the last three years.</p>
+          </div>
+            
+          <div class="step" id="step-one">
+			      <p>While the number of inspected facilities remained constant in other countries over the last three years, there have been 130 more API manufacturing facilities inspected in India in 2023.</p>
+          </div>
+            		
+			    <div class="step" id="step-two">
+			      <p>This defies multiple <a href= "https://thechinaproject.com/2023/06/07/u-s-drug-shortages-highlight-dependence-on-china-gray-supply-chains/"headlines></a> that focus only on the US' reliance on China. </p>
+          </div>
+				
+			    <div class="step" id="step-three">
+			      <p>Which was the prevailing angle of articles covering the FDA's temporary allowance for Chinese manufacturer Qilu Pharmaceuticals to begin importing Cisplatin and Carboplatin</p>
+          </div>
+				
+        </div>
+    </section>
+		
+		
+		<script>
+      
+        /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+        /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+        d3.select("#Carboplatin").style('fill', '#black')
+        d3.select("#Cisplatin").style('fill','#black')
+        })
+
+    </script>
+	  
+	  <section id="scrolly">
+        <div class="sticky-thing">
+	  			<div class="flourish-embed flourish-scatter" data-src="visualisation/14667198"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+		    </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step-zero">
+			    </div>
+        
+          <div class="step" id="step-one">
+			      <p>Intas is in the greater landscape of pharmaceutical companies manufacturing chemotherapy drugs.</p>
+          </div>
+    			<div class="step" id="step-two">
+            <p>It is clearly smaller than the giants in terms of revenue. </p>
+			    </div>
+		    </div>
+	  </section>
+		
+	  <script>
+      
+      /* Scrollytelling code goes under here */
+       /* Step 1 code */
+      d3.select("#step-one").on('stepin',function(e) {
+        console.log("We've ARRIVED at step one")
+
+      })
+      /* Step 2 code */
+      d3.select("#step-two").on('stepin',function(e) {
+        console.log("We've ARRIVED at step two")
+       
+        
+      })
+      /* Step 3 code back to norm */
+      d3.select("#step-three").on('stepin',function(e) {
+        console.log("We've ARRIVED at step three")
+      })
+
+    </script>
+
+    <script>
+      const scroller = scrollama();
+
+	    scroller
+		    .setup({
+			    step: "#scrolly .scrolly-overlay .step",
+			    offset: 0.75,
+			    debug: false
+		    })
+		    .onStepEnter(function({ element, index, direction}) {
+			    const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			    element.dispatchEvent(event);
+		    })
+		    .onStepExit(function({ element, index, direction }) {
+			    const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			    element.dispatchEvent(event);
+		    });
+
+	  
+      window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+  </body>
+</html>
